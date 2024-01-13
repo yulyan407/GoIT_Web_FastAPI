@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "goit-web-homework-11"
+version = "0.1.0"
+description = ""
+authors = ["Yuliia Didenko <yu_lyan@ukr.net>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.108.0"
+alembic = "^1.13.1"
+sqlalchemy = "^2.0.25"
+asyncpg = "^0.29.0"
+uvicorn = "^0.25.0"
+pydantic = {extras = ["email"], version = "^2.5.3"}
+pydantic-extra-types = "^2.4.1"
+phonenumbers = "^8.13.27"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
