@@ -30,3 +30,6 @@ In addition to the basic CRUD functionality, the API also has the following feat
 - **Support for storing a contact's date of birth**
 - **Provide API documentation**
 - **Using the Pydantic data validation module**
+- **Implemented an authentication mechanism in the application**
+- **An authorization mechanism has been implemented using JWT tokens so that all operations with contacts are performed only by registered users**
+- **The user has access only to his transactions with contacts**

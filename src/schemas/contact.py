@@ -1,8 +1,7 @@
-from typing import Optional
-
 from datetime import date
 from pydantic import BaseModel, EmailStr, Field, PastDate
 from pydantic_extra_types.phone_numbers import PhoneNumber
+from src.schemas.user import UserResponse
 
 
 class ContactSchema(BaseModel):
@@ -20,6 +19,7 @@ class ContactResponse(BaseModel):
     email: str
     phone: str
     birthday: date
+    user: UserResponse | None
 
     class Config:
         from_attributes = True
