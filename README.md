@@ -33,3 +33,7 @@ In addition to the basic CRUD functionality, the API also has the following feat
 - **Implemented an authentication mechanism in the application**
 - **An authorization mechanism has been implemented using JWT tokens so that all operations with contacts are performed only by registered users**
 - **The user has access only to his transactions with contacts**
+- **A mechanism for verifying the registered user's e-mail has been implemented**
+- **A limited number of requests to your contact routes. Limited speed - creating contacts for the user**
+- **CORS enabled for REST API**
+- **The ability to update the user's avatar has been implemented. Cloudinary service is used**
