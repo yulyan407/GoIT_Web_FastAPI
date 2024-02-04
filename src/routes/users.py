@@ -1,14 +1,8 @@
-import pickle
-
 import cloudinary
 import cloudinary.uploader
 from fastapi import (
     APIRouter,
-    HTTPException,
     Depends,
-    status,
-    Path,
-    Query,
     UploadFile,
     File,
 )
@@ -37,6 +31,15 @@ cloudinary.config(
     dependencies=[Depends(RateLimiter(times=1, seconds=20))],
 )
 async def get_current_user(user: User = Depends(auth_service.get_current_user)):
+    """
+    The get_current_user function is a dependency that will be injected into the
+    get_current_user endpoint. It uses the auth_service to retrieve the current user,
+    and returns it if found.
+
+    :param user: User: Get the current user from the database
+    :return: The user object
+    :doc-author: Trelent
+    """
     return user
 
 
@@ -50,6 +53,16 @@ async def get_current_user(
     user: User = Depends(auth_service.get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
+    """
+    The get_current_user function is a dependency that returns the current user.
+    It uses the auth_service to get the current user, and then it gets their avatar URL from Cloudinary.
+    :param file: UploadFile: Get the file from the request
+    :param user: User: Get the current user
+    :param db: AsyncSession: Get a database connection
+    :param : Get the user's email and update it in the database
+    :return: The current user,
+    :doc-author: Trelent
+    """
     public_id = f"GoIT_FastAPI/{user.email}"
     res = cloudinary.uploader.upload(file.file, public_id=public_id, owerite=True)
     print(res)

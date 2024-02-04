@@ -1,5 +1,5 @@
 from datetime import date
-from pydantic import BaseModel, EmailStr, Field, PastDate
+from pydantic import BaseModel, EmailStr, Field, PastDate, ConfigDict
 from pydantic_extra_types.phone_numbers import PhoneNumber
 from src.schemas.user import UserResponse
 
@@ -21,5 +21,4 @@ class ContactResponse(BaseModel):
     birthday: date
     user: UserResponse | None
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)  # noqa

@@ -37,3 +37,6 @@ In addition to the basic CRUD functionality, the API also has the following feat
 - **A limited number of requests to your contact routes. Limited speed - creating contacts for the user**
 - **CORS enabled for REST API**
 - **The ability to update the user's avatar has been implemented. Cloudinary service is used**
+- **Documentation for this project was created using Sphinx**
+- **Covered repository modules with unit tests using the Unittest framework**
+- **Functional tests covered the auth route using the pytest framework**
